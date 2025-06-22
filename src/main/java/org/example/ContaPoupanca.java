@@ -18,4 +18,15 @@ public class ContaPoupanca {
 
     }
 
+    public int getAgencia() {
+        return agencia;
+    }
+
+    public int getNumeroConta() {
+        return numeroConta;
+    }
+
+    public int getSaldo() {
+        return saldo;
+    }
 }
