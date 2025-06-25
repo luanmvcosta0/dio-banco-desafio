@@ -9,11 +9,19 @@ public class Main {
         Conta cc = new ContaCorrente(luan);
         Conta cp = new ContaPoupanca(luan);
 
-        cc.depositar(150);
-        cc.transferir(75, cp);
+        cc.depositar(200);
+        cc.transferir(70, cp);
 
         cc.imprimirExtrato();
         cp.imprimirExtrato();
+
+        cc.consultarSaldo();
+        cp.consultarSaldo();
+
+        cc.pagarBoleto(95);
+
+        cp.bloquearConta();
+        cp.desbloquearConta();
 
     }
 }

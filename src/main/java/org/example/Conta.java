@@ -12,6 +12,7 @@ public abstract class Conta implements IConta{
     protected int numeroConta;
     protected double saldo;
     protected Cliente cliente;
+    private boolean bloqueada;
 
     public Conta(Cliente cliente) {
         this.agencia = AGENCIA_PADRAO;
@@ -41,5 +42,30 @@ public abstract class Conta implements IConta{
         System.out.println(String.format("Numero: %d", this.getNumeroConta()));
         System.out.println(String.format("Saldo: %.2f", this.getSaldo()));
     }
+
+    public void consultarSaldo() {
+        System.out.println("Saldo: " + saldo);
+    }
+
+    public void pagarBoleto(double valor) {
+        if (valor > 0 && saldo >= valor) {
+            sacar(valor);
+            System.out.println("Boleto pago com sucesso! Valor: " + valor);
+        } else {
+            System.out.println("Saldo insuficiente.");
+        }
+    }
+
+    public void bloquearConta() {
+        bloqueada = true;
+        System.out.println("Conta bloqueada.");
+    }
+
+    public void desbloquearConta() {
+        bloqueada = false;
+        System.out.println("Conta desbloqueada.");
+    }
+
+
 
 }
