@@ -66,6 +66,13 @@ public abstract class Conta implements IConta{
         System.out.println("Conta desbloqueada.");
     }
 
-
+    public void encerrarConta() {
+        if (saldo > 0) {
+            System.out.println("Não é possível encerrar a conta com saldo disponível.");
+        } else {
+            bloquearConta();
+            System.out.println("Conta encerrada com sucesso.");
+        }
+    }
 
 }

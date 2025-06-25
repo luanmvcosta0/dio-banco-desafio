@@ -12,16 +12,29 @@ public class Main {
         cc.depositar(200);
         cc.transferir(70, cp);
 
+        System.out.println("=========================");
+
         cc.imprimirExtrato();
         cp.imprimirExtrato();
+
+        System.out.println("=========================");
 
         cc.consultarSaldo();
         cp.consultarSaldo();
 
+        System.out.println("=========================");
+
         cc.pagarBoleto(95);
+
+        System.out.println("=========================");
 
         cp.bloquearConta();
         cp.desbloquearConta();
+
+        System.out.println("=========================");
+
+        cc.encerrarConta();
+        cp.encerrarConta();
 
     }
 }
